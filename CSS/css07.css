@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+html ,body{
+    width: 100%;
+    height: 100%;
+}
+
+#yellow{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    background-color: yellow;
+} 
+
+
+
+
+
+
+#green{
+    position: absolute;
+    top: 20%;
+    width: 80px;
+    height: 60px;
+    background-color: rgb(81, 255, 0);
+} 
+
+
+ #red{
+    position:absolute; 
+    top: 10%; 
+    width: 30px;
+    height: 70px;
+    background-color: rgb(255, 0, 13);
+}  

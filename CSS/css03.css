@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+html ,body{
+    width: 100%;
+    height: 100%;
+}
+
+.parent {
+    background: #e20707;
+    font-size:5px;
+    width: 100px;
+    height: 100px;
+}
+
+.child{
+    background: rgb(40, 212, 18);
+    width:5em;
+    height:5em;
+}
+
+
+/*%  -- respect to his parent
+  vw vh -- respect to parent(screen)
+  em- parent font-size se data leta hai   1em=5px
+  rem -  parent(parent se data leta hai basically by html font size)
+*/

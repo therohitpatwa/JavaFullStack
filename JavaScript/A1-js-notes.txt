@@ -1,0 +1,529 @@
+-------
+class 2
+-------
+
+How to add JS in html page ?
+
+<script src="script.js"></script>
+
+## Understanding console
+
+console.log() ---> print
+console.error()--->
+console.warn() ---->
+console.debug()
+
+## Understanding alert
+
+window.alert("I am alert");
+alert("Hello world!");
+
+prompt
+
+---
+
+window.prompt()
+prompt(message)
+
+Note: prompt is advance version of alert and we can hold it's response and in alert we can't do it
+
+How to hold prompt response ? : variable
+
+## How to use variables ?
+
+var & let : These are like container
+Using const : once we assign to const, it will not change
+
+but if we have different type of data like int, float how we can store it ?
+
+## Data types in JS
+------------------------------------------------------
+
+types :
+
+primitive and reference type
+
+20, 30.9, ashwani, true , c, null , undefined - primitive data type
+
+[] () {} - reference data types
+
+## difference between refrence and primitive datatype
+------------------------------------------------------
+
+var v = 10;
+var c=v;
+
+c=c+2;
+
+console.log(v);
+console.log(c);
+
+---
+
+var arr=[1,2,3,4,5];
+var arr1=arr;
+arr1.pop();             // make change in orginal value bcz we pass refernce
+
+## how to overcome this ?
+
+use spread
+var arr=[1,2,3,4,5];
+var arr1=[...arr];    //it creates new Object
+
+
+
+
+
+
+
+
+---------
+class 3
+---------
+
+
+
+# conditionals in javascript
+------------------------------------------------------
+1. if else /else if
+2. switch
+3. ternory operator
+
+Note: if-else executed based on true false right but let's understand some types also
+null, undefined, , 0, NAN , '' , "", document.all ----> false
+Rest All --- > true
+
+## loops in javascript
+------------------------
+1. for loop     --done
+2. while loop   --done
+3. dowhile-loop --done 
+4. foreach loop --done 
+
+## functions in javascript
+------------------------------
+
+function in javascript are different from java here we don't need to give return type a
+and parameter type( we can pass anything in it)
+
+
+---------------JAVA---------------
+String print(int a)
+{
+
+}
+----------------JS-----------------
+function print(a)
+{
+
+}
+print() // calling
+
+## note: in js we treat function as value also
+
+in ES5 -- we have 3 types of function
+
+1. function statement(normal function)
+2. function expresion
+3. anonymous functions
+
+in ES6 -- we can write same function in 3 types
+
+1.fat arrow function
+    a. basic fat arrow
+    b. fat arrow with one param
+    c. fat arrow with implicit return
+
+
+-----------------    
+Functions in ES5
+------------------
+
+1. function statement(normal function)
+---------------------------------------
+
+function print()
+{
+console.log("hello");
+}
+print()
+
+2. function expresion
+-----------------------------------------
+
+var func = function (){
+console.log("hello");
+}
+func()
+
+# note: in JS we will not give name in right side, left side variable name treaed as 
+function name
+
+3. anonymous functions
+------------------------------------------
+
+function() {
+console.log("hello");
+}
+
+
+-----------------    
+Functions in ES6
+------------------
+
+
+## a.basic fat arrow function
+-----------------------------
+var fun = () => {
+       
+}
+
+b. fat arrow with one param
+-------------------------------
+var fun = (a)=>{
+
+}
+fun(20);
+
+
+c. fat arrow with implicit return
+-----------------------------------
+var fun = ()=>"Genie Ashwani";
+var res=fun();
+
+
+
+
+# note-: in js functions with no return is actually return undefined
+
+
+
+
+-----------
+class 4
+-----------
+
+let's explore : 
+undefined: it accur when variable ko value assing na ki gyi ho
+not defined : it accur when variable not defined ho 
+null: it is also a value like, accur when soemthing not found 
+
+
+---------------------
+Array in javascript
+--------------------- 
+
+in java we can say collection of same datatype right but in javascript we can store 
+hetrogenious values in array 
+
+var arr=[1,2,"ashwani",[],function (){}]
+arr[2];
+
+
+-----------------------
+Objects in javascript
+-----------------------
+
+var obj = {};   
+var ob1=new Object();
+
+
+var obj={
+    name:"ashwani",
+    "age":25,
+    email:"ashwani@gmail",
+    contact:"56789087654"
+}
+
+console.log(obj.name)
+
+----------------------------
+this keyword is javascript
+----------------------------
+in JAVA this refer to the current object instance right but in javascript this value is 
+different at different place 
+
+global - window
+function - window  
+method - object
+function inside method(ES5) - window
+function inside method(ES6) - object   //arrow function
+constructor - new blank object 
+event listner - that element jispe listiner laga ha
+
+
+global : kisi bhi scope me nhi 
+------------------------------
+console.log(this);
+
+
+function 
+-------
+function print()
+{
+    console.log(this);
+}
+
+method : in js we can say method which is inside object 
+------------------------------------------------------
+var obj ={
+    name : function(){
+        console.log(this);  //this.age
+    },
+    age:25
+
+}
+
+obj.name(); 
+
+
+function inside method(ES5)
+----------------------------
+var obj = {
+    parent : function(){
+        function child()
+        {
+            console.log(this); 
+        }
+
+        child();
+    }
+}
+
+obj.parent();
+
+
+
+function inside method(ES6)
+----------------------------
+
+var obj ={
+    name : function(){
+        var child = ()=>{
+            console.log(this); 
+        }
+    }
+
+}
+
+obj.name();
+
+
+
+
+
+constructor - new blank object 
+------------------------------
+function print()
+{
+    console.log(this);
+}
+
+var obj=new print();
+
+
+
+
+event listener - that element jispe listener laga ha
+--------------------------------------------------------
+<button>click</button>
+
+document.querySelector("button")
+
+.addEventListener("click",function(){
+    console.log(this); 
+})
+
+
+
+call apply bind
+---------------
+
+call : through call we can change 'this' value in function 
+
+var obj={
+    name:"ashwani"
+}
+
+function print()
+{
+    console.log(this);
+}
+
+print.call(obj)
+
+apply
+------
+var obj={
+    name:"ashwani"
+}
+
+function print(x,y,z)
+{
+    console.log(this,x,y,z);
+}
+
+print.apply(obj,[1,2,3])
+
+
+-------
+bind
+------
+var obj={
+    name:"ashwani"
+}
+
+function print()
+{
+    console.log(this);
+}
+
+var func=print.bind(obj)
+func();
+
+
+
+
+----------------------
+closures in javascript
+-----------------------
+
+A function which retun another function using some value of it's parent in called clouser
+
+
+function print()
+{
+    var p=10;
+     return function child()
+    {
+    
+        console.log(p);
+        
+    }
+}
+
+
+var fun=print();
+fun();
+
+
+
+
+
+
+
+
+
+
+what DOM ?
+DOM stands for Document Object Model
+
+ it's a way for web browsers to represent and control HTML tags
+
+ But why we need DOM ?
+ in html we don't have control over tag like we want to to show or hide some detail
+ on click of a button 
+ we are not able do it with html so we need to take help from DOM 
+
+
+ what is DOM manipulation ?
+ page me kuch bhi change krna ya manipulate krna use kam DOM manipulation kahte ha.
+
+ access ===> reach ====>selection===>change 
+
+
+How to access element ?
+1. selection of element
+    document.getElementsByTagName
+    document.getElementById
+    document.getElementsByClassName
+ or by single statement----
+    document.querySelector('h1');
+    ,document.querySelector('#test');
+    ,document.querySelector('.test'); 
+
+
+
+modifying element in javascript
+--------------------------------
+1. textContent : will use textContent for only text because it will not understand html tags 
+2. innerHTML : will use when we have to use html tags 
+
+var btn=document.querySelector("button");
+btn.textContent="Starting..."
+
+var h1=document.querySelector('p');
+h1.textContent="hello"
+h1.innerHTML='<i>Hello</i>'
+
+
+
+How to change css of element
+-----------------------------
+var h1=document.querySelector('h1');
+h1.style.color=red; ----> error because js consider it as keyword
+
+var h1=document.querySelector('h1');
+h1.style.color='red';
+h1.style.fontFamily="Courier New";
+
+
+how to add and remove class to element
+----------------------------
+var h1=document.querySelector('h1');
+h1.classList.add('test');
+
+var h1=document.querySelector('h1');
+h1.classList.remove('test');
+
+`
+
+creating and deleting element
+-----------------------------
+
+creating of element will be done in part = creating + adding in page 
+
+creating
+------------
+var h1=document.createElement('h1');
+h1.textContent="hello";
+h1.classList.add("test");
+
+
+adding 
+-------
+document.querySelector("body").appendChild(h1);
+
+
+
+remove
+------
+var btn=document.querySelector("button");
+btn.remove();
+
+--------------or-----------------------------
+var btn=document.querySelector("button");
+document.querySelector("body").removeChild(btn);
+
+
+
+Event Handling in JS
+---------------------
+change in state of ele ment is called event : 'element me agar kuch bhi change hoga to event 
+occur hoga' 
+
+if we haven't put listener in perticular event then event will be ignored
+if we put listiner on event then, when event occur listiner will work 
+
+
+var btn=document.querySelector("button");
+btn.addEventListener('click',function(){
+    alert("I got clicked")
+});
+
+
+how to consume api in javascript
+----------------------------------
+using fetch() for API Calls
+
+

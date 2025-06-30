@@ -1,0 +1,11 @@
+button:hover{
+     background-color: aqua;
+}
+
+input:focus{
+    background-color: aqua;
+}
+
+h1::before{
+    content: "name";
+}
