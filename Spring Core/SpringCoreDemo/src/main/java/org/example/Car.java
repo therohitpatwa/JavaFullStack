@@ -4,9 +4,14 @@ public class Car {
     private Engine engine;
     public Car()
     {
-        System.out.println("Car cons");
+        System.out.println("Car constructor");
+    }
+
+    public Car(Engine engine) {
+        System.out.println("Car one arg constructor");
         this.engine=engine;
     }
+
     public void setEngine(Engine engine)
     {
         System.out.println("Car Setter Method");

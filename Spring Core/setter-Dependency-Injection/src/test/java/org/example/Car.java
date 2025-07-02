@@ -4,9 +4,8 @@ public class Car {
     private Engine engine;
     Car(Engine engine)
     {
-        System.out.println("Argument Constructor");
+        System.out.println("Car class Argument Constructor");
         this.engine=engine;
-        String s;
     }
 
 

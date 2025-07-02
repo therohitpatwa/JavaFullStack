@@ -3,27 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-     bean definitions here
+    <!-- bean definitions here -->
 
 
-     Creates MHawk Object
+    <!-- Creates MHawk Object -->
     <bean id="MHawk" class="org.example.MHawk"></bean>
 
 
-     Creates Car Object
-    <bean id="car" class="org.example.Car" >
-        by setter method
-          <property name="engine"  ref="MHawk"></property>
-        by constructer
-           <constructor-arg  name="engine" ref="MHawk"></constructor-arg>
+    <!-- Creates Car Object -->
+<!--    <bean id="car" class="org.example.Car" autowire="byName">-->
+        <bean id="car" class="org.example.Car" autowire="byType">
+
 
     </bean>
 
 </beans>
-
-
-
-
-
-
-
