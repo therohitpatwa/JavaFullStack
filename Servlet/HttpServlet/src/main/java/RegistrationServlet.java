@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegistrationServlet extends HttpServlet {
-    List<User> users=new ArrayList<User>();
+    List<User> users= new ArrayList<>();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
