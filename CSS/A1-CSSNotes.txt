@@ -1,0 +1,88 @@
+How to use css 
+---------------
+1. inline -- fast
+2. external css -- 
+3. embedded css  -- head
+
+
+Selectors in css
+-------------------
+
+Primary Selector
+-------------------
+Syntax
+
+Selector{
+    attribute:value;
+}
+
+Type Selector : h2 --> effect in all h2
+h2{
+    color : red;
+} 
+
+ID Selector : 
+--------------
+#id{
+    color :red;
+}
+
+class Selector
+---------------
+.class Name{
+    color:red;
+}
+
+Relational Selector
+-------------------
+
+parent child : child Selector, it can access all child elements under specific parent from 
+any level 
+
+ui li{
+
+}
+
+parent > child
+
+
+
+
+
+width & height - defines width and height of element
+
+color – defines the text color of an element.
+
+bgcolor - defines background color
+
+units - px % vh vw em rem   define lengths, sizes, and measurements:
+max-height max-width -----H/W
+
+font-family – specifies the typeface or font to be used in an element.
+
+font-size – controls the size of the text in an element.
+
+line-height – sets the space between lines of text (leading).
+
+text-align – aligns the text horizontally (left, right, center, justify).
+
+padding – defines the space between the content and the element's border (inside spacing).
+
+margin – sets the space outside the element's border (outside spacing).
+
+border – defines the style, width, and color of an element's border.
+
+display – specifies how an element is displayed (block, inline, flex, grid, etc.).
+
+position – sets how an element is positioned in the document flow 
+
+                                    display
+if an element is block element, it takes upto the entire width of the row and no other element can appear besides it.
+but when we make block to inline block it will allow to other element besides it .
+
+Inline element other element can appear besides it.
+
+if you make any element inline then you can not change its width and height.
+                                    position
+absolute -- pure screen par ham kahi bhi ghum sakte hai.
+relative-- absloute relative ke according work karega
