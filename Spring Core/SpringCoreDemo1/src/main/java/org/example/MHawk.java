@@ -1,8 +1,9 @@
 package org.example;
 
 public class MHawk implements Engine{
-    public MHawk() {
-        System.out.println("MHawk Con");
+    public MHawk()
+    {
+        System.out.println("MHawk Constructor");
     }
 
     public int start()

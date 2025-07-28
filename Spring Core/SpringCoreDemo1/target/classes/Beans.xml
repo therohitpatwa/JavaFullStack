@@ -9,13 +9,19 @@
 <!--    Creates MHawk Object-->
     <bean id="MHawk" class="org.example.MHawk"></bean>
 
+    <bean id="KSeries" class="org.example.KSeries"></bean>
 
-<!--    Creates Car Object-->
-    <bean id="car" class="org.example.Car" >
-<!--&lt;!&ndash;       DI by setter method&ndash;&gt;-->
-<!--        <property name="engine"  ref="MHawk"></property>-->
-<!--&lt;!&ndash;       DI by constructer&ndash;&gt;-->
-<!--        <constructor-arg  name="engine" ref="MHawk"></constructor-arg>-->
+
+
+    <!--    Creates Car Object-->
+    <bean id="Car" class="org.example.Car" >
+
+
+<!--       DI by setter method-->
+        <property name="engine"  ref="MHawk"></property>
+
+<!--       DI by constructer-->
+<!--        <constructor-arg  name="engine" ref="KSeries"></constructor-arg>-->
 
     </bean>
 

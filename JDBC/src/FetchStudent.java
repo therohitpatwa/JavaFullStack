@@ -22,7 +22,7 @@ public class FetchStudent {
             //4 Execute Statement
             ResultSet rs = stmt.executeQuery(query);
 
-            //get result
+            //get result Process Close
             System.out.println("Id | Name | Age | Course");
             System.out.println("----------------------------------");
             while (rs.next())
@@ -34,8 +34,7 @@ public class FetchStudent {
             }
 
         }
-        catch (Exception e)
-        {
+        catch (Exception e)        {
             e.printStackTrace();
         }
     }

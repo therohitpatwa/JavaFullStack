@@ -17,7 +17,7 @@ public class DeleteStudent {
             con= DriverManager.getConnection(url,username,password);
             //create statement
             PreparedStatement pr = con.prepareStatement(deleteQuery);
-            pr.setInt(1,2);
+            pr.setInt(1,16);
             int update = pr.executeUpdate();
             if(update>0)
             {

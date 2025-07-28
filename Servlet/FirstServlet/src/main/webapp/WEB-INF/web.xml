@@ -15,5 +15,4 @@
     <servlet-name>FirstServlet</servlet-name>
     <url-pattern>/first</url-pattern>
   </servlet-mapping>
-
 </web-app>

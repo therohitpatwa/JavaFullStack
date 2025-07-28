@@ -11,10 +11,7 @@
 
 
     <!-- Creates Car Object -->
-<!--        <bean id="car" class="org.example.Car" autowire="byName">-->
-<!--    <bean id="car" class="org.example.Car" autowire="byType">-->
-
-
-    </bean>
+        <bean id="Car" class="org.example.Car" autowire="byName"></bean>
+<!--    <bean id="car" class="org.example.Car" autowire="byType"> </bean>-->
 
 </beans>
