@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Spring Boot Application Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring-boot-app
+    ports:
+      - "8080:8080" # Host_Port:Container_Port
+    environment:
+      # These environment variables are passed to your Spring Boot application
+      # Ensure your application.properties/yml uses these variables
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/DockerTestDB
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: R0hit@#$18
+    depends_on:
+      - db # Ensures the 'db' service starts before 'app'
+    networks:
+      - app-network
+
+  # MySQL Database Service
+  db:
+    image: mysql:8.0 # You can use a different version like mysql:5.7 if needed
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: R0hit@#$18  # Set a strong root password
+      MYSQL_DATABASE: DockerTestDemo       # Name of the database to create
+    ports:
+      - "3307:3308" # Optional: Expose MySQL port to host for external access (e.g., MySQL Workbench)
+    volumes:
+      - mysql_data:/var/lib/mysql # Persist data to a named volume
+      # If you have custom SQL scripts to run on startup, uncomment and modify:
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+# Define networks
+networks:
+  app-network:
+    driver: bridge
+
+# Define volumes for data persistence
+volumes:
+  mysql_data:

@@ -1,0 +1,14 @@
+FROM openjdk:21
+#BaseImage
+WORKDIR /app
+
+
+#copy the JAR file into the container
+COPY target/DockerDemoSpringBoot-0.0.1-SNAPSHOT.jar app.jar
+
+
+EXPOSE 8080
+
+
+#Command to run the spring boot app
+CMD ["java","-jar","app.jar"]
