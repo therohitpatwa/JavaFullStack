@@ -15,7 +15,7 @@ public class StudentService {
 
     public List<Student>   getAllStudent()
     {
-        System.out.println("Service Running");
+         System.out.println("Service Running");
          List<Student> allStudent=studentRepo.getAllStudent();
          return allStudent;
     }

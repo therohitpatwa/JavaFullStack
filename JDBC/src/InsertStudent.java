@@ -2,11 +2,11 @@ import java.sql.*;
 
 public class InsertStudent {
     public static void main(String[] args) {
-        String url="jdbc:mysql://localhost:3306/JavaFullStack";
+        String url="jdbc:mysql://localhost:3306/Jdbc";
         String username="root";
         String password="R0hit@#$18";
 
-        String insertQuery="insert into students(name,age,course) values (?,?,?)";
+        String insertQuery="insert into student(name,age,course) values (?,?,?)";
         try {
 
             //1. load kro -- nowdays it loads automatically.

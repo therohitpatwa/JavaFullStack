@@ -4,6 +4,8 @@ package com.example.DockerDemoSpringBoot;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+import java.io.FileInputStream;
+
 @Entity
 public class User {
 
@@ -41,4 +43,7 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+
 }
