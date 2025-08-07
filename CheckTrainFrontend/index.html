@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CheckTrain - Professional train booking and search platform">
+    <meta name="keywords" content="train, booking, railway, travel, CheckTrain">
+    <meta name="author" content="CheckTrain">
+    
+    <title>CheckTrain - Professional Train Search Platform</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚂</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-train"></i>
+                <span>CheckTrain</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#search" class="nav-link">Search</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-background">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Find Your Perfect
+                    <span class="text-gradient">Train Journey</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Experience seamless train booking with real-time search, 
+                    comprehensive route information, and professional service
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Routes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Stations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content" id="search">
+        <div class="container">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="section-header">
+                    <h2 class="section-title">Search Trains</h2>
+                    <p class="section-subtitle">Enter station codes to find available trains</p>
+                </div>
+
+                <div class="search-card">
+                    <form class="search-form" id="searchForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="sourceCode" class="form-label">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    From Station
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="sourceCode" 
+                                        name="sourceCode" 
+                                        class="form-input" 
+                                        placeholder="Enter source station code (e.g., NDLS)" 
+                                        required
+                                        maxlength="10"
+                                        pattern="[A-Z]{2,10}"
+                                        title="Station code should be 2-10 uppercase letters"
+                                    >
+                                    <div class="input-focus-border"></div>
+                                </div>
+                                <div class="form-error" id="sourceCodeError"></div>
+                            </div>
+
+                            <div class="form-swap">
+                                <button type="button" class="swap-btn" id="swapBtn" title="Swap stations">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="destinationCode" class="form-label">
+                                    <i class="fas fa-flag-checkered"></i>
+                                    To Station
+                                </label>
+                                <div class="input-wrapper">
+                                    <input 
+                                        type="text" 
+                                        id="destinationCode" 
+                                        name="destinationCode" 
+                                        class="form-input" 
+                                        placeholder="Enter destination station code (e.g., CST)" 
+                                        required
+                                        maxlength="10"
+                                        pattern="[A-Z]{2,10}"
+                                        title="Station code should be 2-10 uppercase letters"
+                                    >
+                                    <div class="input-focus-border"></div>
+                                </div>
+                                <div class="form-error" id="destinationCodeError"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="clearBtn">
+                                <i class="fas fa-eraser"></i>
+                                Clear
+                            </button>
+                            <button type="submit" class="btn btn-primary" id="searchBtn">
+                                <i class="fas fa-search"></i>
+                                <span class="btn-text">Search Trains</span>
+                                <div class="btn-loader">
+                                    <div class="spinner"></div>
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Loading Section -->
+            <section class="loading-section" id="loadingSection">
+                <div class="loading-card">
+                    <div class="loading-animation">
+                        <div class="train-loader">
+                            <div class="train-car"></div>
+                            <div class="train-car"></div>
+                            <div class="train-car"></div>
+                        </div>
+                    </div>
+                    <h3 class="loading-title">Searching for trains...</h3>
+                    <p class="loading-text">Please wait while we find the best routes for you</p>
+                </div>
+            </section>
+
+            <!-- Alert Section -->
+            <section class="alert-section" id="alertSection">
+                <div class="alert" id="alertBox">
+                    <div class="alert-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="alert-content">
+                        <h4 class="alert-title">Alert</h4>
+                        <p class="alert-message" id="alertMessage"></p>
+                    </div>
+                    <button class="alert-close" id="alertClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="resultsSection">
+                <div class="results-header">
+                    <div class="results-info">
+                        <h2 class="results-title">Available Trains</h2>
+                        <p class="results-count" id="resultsCount"></p>
+                    </div>
+                    <div class="results-actions">
+                        <button class="btn btn-outline" id="sortBtn">
+                            <i class="fas fa-sort"></i>
+                            Sort by Time
+                        </button>
+                        <button class="btn btn-outline" id="filterBtn">
+                            <i class="fas fa-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="results-container" id="trainResults">
+                    <!-- Train cards will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- No Results Section -->
+            <section class="no-results-section" id="noResultsSection">
+                <div class="no-results-card">
+                    <div class="no-results-icon">
+                        <i class="fas fa-search-minus"></i>
+                    </div>
+                    <h3 class="no-results-title">No Trains Found</h3>
+                    <p class="no-results-text">
+                        We couldn't find any trains for the selected route. 
+                        Please try different station codes or check your spelling.
+                    </p>
+                    <button class="btn btn-primary" id="searchAgainBtn">
+                        <i class="fas fa-redo"></i>
+                        Search Again
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-train"></i>
+                        <span>CheckTrain</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional train search platform providing real-time 
+                        information for seamless travel planning.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#search">Search</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +91 123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@checktrain.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CheckTrain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
